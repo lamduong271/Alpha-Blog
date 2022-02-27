@@ -7,4 +7,12 @@ class ArticlesController < ApplicationController
     def index
         @allArticles = Article.all()
     end
+
+    def new
+        @article = Article.new
+    end
+
+    def create
+    
+    end
 end
