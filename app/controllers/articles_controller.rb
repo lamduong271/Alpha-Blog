@@ -35,7 +35,14 @@ class ArticlesController < ApplicationController
             flash[:notice] = "Article was updated successfully"
             redirect_to article_path(@article)
         else
-            render :edit, status: :unprocessable_entity
+            render :edit
         end
     end
+
+    def destroy
+        @article = Article.find(params[:id])
+        @article.destroy
+        redirect_to articles_path
+    end
+    
 end

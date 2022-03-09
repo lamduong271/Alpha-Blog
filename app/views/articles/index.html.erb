@@ -10,12 +10,15 @@
 
 
 <tbody>
-<% @allArticles.each do |item| %>
+<% @allArticles.each do |article| %>
 <tr>
-<td><%= item.title %> </td>
-<td><%= item.description %></td>
-<td>Some action </td>
-</tr>
+<td><%= article.title %> </td>
+<td><%= article.description %></td>
+<td><%= link_to 'Show', article_path(article)%></td>
+<td><%= link_to 'Editt', edit_article_path(article)%></td>
+<td><%= link_to 'Delete', article_path(article), data: { "turbo-method": :delete , "turbo-confirm": "Are you sure?"} %></td></tr>
 <% end %>
 </table>
+
+<%= link_to 'Create new article', new_article_path %>
 </tbody>

@@ -2,3 +2,8 @@
 <p><strong>title: <%= @article.title %> </strong></p>
 <p><strong>description: <%= @article.description %> </strong></p>
 <br/>
+
+<span><%= link_to 'Edit', edit_article_path(@article) %></span>
+<td><%= button_to 'Delete', article_path(@article), method: :delete, onclick: "return confirm('Are you sure?')" %></td>
+<span><%= link_to 'Return to articles list', articles_path %></span>
+
